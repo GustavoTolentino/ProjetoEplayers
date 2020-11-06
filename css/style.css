@@ -12,6 +12,7 @@
     --blue: #001F70;
     --gradient:linear-gradient( #000000 0%, rgba(83, 83, 83, 0.577381) 25%, rgba(196, 196, 196, 0) 87.5%);
     --font: 'Titillium Web', sans-serif;   
+    --colorbanner: #000000;
 }
 body{
     background-color: var(--background);
@@ -397,6 +398,7 @@ body{
 }
 .aba-noticias{
     width: 80%;
+   
 }
 .content-tabela{
     width: 20%;
@@ -513,7 +515,7 @@ body{
     padding: 5px;
     text-decoration: none;
 }
-.mapa-site-footer ul{
+.mapa-content ol{
     display: flex;
 }
 .mapa-site-footer a{
@@ -599,11 +601,90 @@ body{
     body{
         background-color: var(--background);
     }
+    .banner-text h1{
+        font-size: 3.75em;
+    }
+    .rodape-cont a{
+        font-size: 0.875em;
+    }
+    .games{
+        height: 5.5em;
+    }
+    .text-about h2{
+        font-size: 1.675em;
+    }
+    .text-about p{
+        font-size: 1.0em;
+    }
+    .text-about h3{
+        font-size: 1.0em;
+    }
+    .content-about{
+        padding-top: 2.9em;
+    }
+    .content-about img{
+        max-width: 27.875em;
+    }
+    .em-b{
+        display: none;
+    }
+    .play2{
+        display: none;
+    }
+    .content-tabela{
+        display: none;
+    }
+    .noticias-bloco{
+        margin-right: 3.475em;
+    }
+
 }
 @media screen and (max-width : 991px){
     body{
         background-color: var(--background);
     }
+    .banner-text{
+        width: 80%;
+        margin-left: -100em;
+    }
+    .content-about img{
+        max-width: 20.875em;
+    }
+    .text-about h2{
+        font-size: 1.65em;
+    }
+    .text-about p{
+        font-size: 0.785em;
+    }
+    .text-about h3{
+        font-size: 0.785em;
+    }
+    .play1{
+        padding: 0.5em;
+        margin-top: 1em;
+        margin-left: -1em;
+        margin-right: -2.5em;
+    }
+    .live-play p{
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+    .more-plays{
+        font-size: 1.125em;
+    }
+    .aba-noticias{
+        display: table-row;
+        justify-content: space-between;
+        align-items: flex-end;
+        
+    } 
+    .content-tabela{
+        display: none;
+    }
+
+    
+    
+
 }
 @media screen and (max-width : 767px){
     body{

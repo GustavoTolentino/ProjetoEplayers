@@ -6,65 +6,131 @@
     border: 0;
     box-sizing: border-box;
 }
+
 :root{
+
     --background: #000000;
     --red: #C20000;
     --blue: #001F70;
     --gradient:linear-gradient( #000000 0%, rgba(83, 83, 83, 0.577381) 25%, rgba(196, 196, 196, 0) 87.5%);
-    --font: 'Titillium Web', sans-serif;   
-    --colorbanner: #000000;
+
+    --font: 'Titillium Web', sans-serif;
+       
 }
+
 body{
     background-color: var(--background);
     font-family: var(--font);
 }
-.menu{
-    height:5em;
+
+header{
     width: 100%;
+    padding: 10px 20px;
+    background-color: var(--background);
+    position: fixed;
+    top: 0;
+    z-index: 998;
+    height: 5em;
+  
 }
-.content{
-    width:100%;
-    max-width: 75em;
-    height: 100%;
-    margin:auto;
+
+.navbar{
+    max-width: 1200px;
+    /* border: solid 2px white; */
+    margin: 0 auto;
+    height: 4.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
+
+.logo{
+    width:20em;
+    height:10em;
+    z-index:9999;
+    text-align: center;
+}
+
+.logo:hover{
+   transform: scale(1.1);
+   transition: 0.5s;
+   
+}
+
+
 .rodape-cont{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.logo{
+
+
+.hamburger{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 0;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger:after{
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    width: 70%;
+    height: 5%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.hamburger:before{
+    content: "";
+    position: absolute;
+    top: 55%;
+    left:15%;
+    width: 70%;
+    height: 5%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.hamburger:hover{
+    background-color: var(--red);
+}
+
+.menu{
+    list-style: none;
     display: flex;
-    width: 100%;
-    max-width:21.18em;
-    margin-right: 6em;
+    align-items: center;
+
 }
-.menu ul{
-    list-style-type:none ;
+
+.menu li{
+    margin-left: 10px;
+    
 }
-.options{
-    width: 100%;
-    max-width: 50em;
-}
+
 .menu a{
-    color: #ffffff;
+    display: block;
+    padding: 10px 15px;
     text-decoration: none;
-    font-size: 1.0em;
-    text-transform: uppercase;
-    transition: 0.3s;
+    color: white;
+    font-family:'Titillium Web', sans-serif;
+    
+    
 }
+
 .menu a:hover{
-    color:#ffffff;
-    background-color: #C31616;
-    border-radius: 0.3em;
-    padding: 0.5em;
-    transform: scale(1.1);    
-}
-.logo:hover{
-    background-color:#C31616;
-    padding: 0.7em;
-    border-radius: 0.3em;
-    transform: scale(1.1);
+    background-color: var(--red);
+    transition: 0.3s ease;
+    border-radius: 5px;
+    
+
 }
 .banner{
     width: 100%;
@@ -408,6 +474,7 @@ body{
     margin-bottom: 4%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .noticias-bloco{
@@ -515,8 +582,9 @@ body{
     padding: 5px;
     text-decoration: none;
 }
-.mapa-content ol{
+.mapa-content ul{
     display: flex;
+    list-style-type: none;
 }
 .mapa-site-footer a{
     color: white;
@@ -585,7 +653,7 @@ body{
     display: flex;
     justify-content: flex-end;
 }
-.botoes-footer ul{
+.botoes-footer ol{
     display: flex;
 }
 .botoes-footer a{
@@ -597,6 +665,7 @@ body{
 .buttons-footer a:hover{
     text-decoration: underline;
 }
+/* 74,9375em */
 @media screen and (max-width : 1199px){
     body{
         background-color: var(--background);
@@ -639,25 +708,25 @@ body{
     }
 
 }
+/* 61,9375em */
 @media screen and (max-width : 991px){
     body{
         background-color: var(--background);
     }
     .banner-text{
-        width: 80%;
-        margin-left: -100em;
+        width: 70%;
     }
     .content-about img{
         max-width: 20.875em;
     }
     .text-about h2{
-        font-size: 1.65em;
+        font-size: 2em;
     }
     .text-about p{
-        font-size: 0.785em;
+        font-size: 1.125em;
     }
     .text-about h3{
-        font-size: 0.785em;
+        font-size: 1.125em;
     }
     .play1{
         padding: 0.5em;
@@ -673,26 +742,121 @@ body{
         font-size: 1.125em;
     }
     .aba-noticias{
-        display: table-row;
-        justify-content: space-between;
-        align-items: flex-end;
+        flex-direction: column;
         
     } 
     .content-tabela{
         display: none;
     }
+    .menu > .rodape-cont{
+        flex-direction: column;
+    }
+    .botoes-footer a{
+        padding: 5px;
+        margin: 5px;
+    }
+    .logo-footer{
+        margin-right: 30px;
+    }
+    .direitos-footer{
+        margin-right: 5px;
+    }
+    .links-uteis-footer{
+        max-width: 45%;
+    }
+    .mapa-site-footer a{
+        margin: 6px;
+    }
 
-    
-    
+    .banner-text{
+        padding-bottom: 20em;
+        padding-left: 10em;
+    }
+    .banner-text h1{
+        font-size: 2.0em;
+    }
+    .banner-text p{
+        font-size: 1em;
+    }
+    .banner-text a{
+    margin-top: 1.3em;
+    padding: 15px 20px;
+    font-size: 24px;
+    }
+    .content-about img{
+        display: none;
+    }
+    .text-about{
+        width: 90%;
+    }
 
+    .bloco-noticias.delete{
+        display: none;
+    }
+    .Noticias{
+        height: 78em;
+    }
+
+    .Noticias h2{
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco-noticias{
+        display: flex;
+        justify-content: center;
+        margin-left: 8em;
+    }
 }
+
+/* 47,9375em     !576px!    */
 @media screen and (max-width : 767px){
     body{
         background-color: var(--background);
     }
-}
-@media screen and (max-width : 576px){
-    body{
-        background-color: var(--background);
+
+    
     }
-}
+    .hamburger{
+        display : block;
+        z-index: 999;
+        color: white;
+        
+       
+        }
+    
+    .menu{
+        width: 100%;
+        color: white;
+        position:fixed;
+        top: 0;
+        right: -100%;
+        margin: 0;
+        height: 100vh;
+        background-color: var(--background);
+        flex-direction: column;
+        padding: 100px 20px;
+        width: 100%;
+        max-width: 250px;
+        transition: 0.5s ease;
+    }
+
+    .menu.active{
+        right: 0;
+
+    }
+
+
+    .banner img{
+        padding-top: 5em;
+    }
+
+    .banner-text{
+        padding-top: 8em;
+    }
+
+    
+
+
+
+
